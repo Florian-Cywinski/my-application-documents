@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.application-picture {
+    object-fit: cover;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    position: relative; /* Declared position allows for location changes */
+    top: -70px; /* Moves the image 70px closer to the top of the page */
+    flex: none;
+    /* transform: scale(0.4, 0.4); */
+}
+
+.application-picture-cover {
+    object-fit: cover;
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    position: relative; /* Declared position allows for location changes */
+    top: -70px; /* Moves the image 70px closer to the top of the page */
+    flex: none;
+}
+
+.left-panel-text-container {
+    position: relative;
+    top: -70px; /* Moves the flex-item content 70px closer to the top of the page */
+}

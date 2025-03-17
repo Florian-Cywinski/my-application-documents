@@ -1,0 +1,123 @@
+---
+import "../styles/tailwind.css";
+import signatureSvg from "../icons/Unt.svg"; // SVG-Unterschrift
+import { Tooltips } from "astro-tooltips";
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Anschreiben</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <!-- <Tooltips interactive={false} delay={[15, 14000]} /> -->
+        <Tooltips interactive={false} data-tooltip-placement="left" />
+    </head>
+    <body
+        class="grid min-h-screen place-items-center bg-gray-400 print:min-h-0"
+    >
+        <main
+            class="m-4 h-[297mm] w-[210mm] overflow-hidden rounded-md bg-white shadow-lg print:m-0 print:h-screen print:w-screen print:rounded-none print:shadow-none"
+        >
+            <header
+                class="flex items-center justify-center h-[15mm] w-[210mm] bg-primary"
+            >
+            </header>
+            <div class="grid grid-cols-7/93 h-[282mm]">
+                <!-- First Column (10% width) - Left panel -->
+                <div class="bg-secondary"></div>
+
+                <!-- Second Column (90% width) -->
+                <div class="bg-white text-justify">
+                    <!-- Inhaltsbereich -->
+                    <div class="pt-20 pb-1 pl-8 pr-14">
+                        <!-- Adressbereich: Firma links, Absender + Datum rechts -->
+                        <div class="flex justify-between">
+                            <!-- Firmenadresse -->
+                            <div class="text-sm leading-relaxed">
+                                <p>
+                                    Musterfirma GmbH<br />
+                                    z. Hd. Herrn/Frau [Name]<br />
+                                    Beispielstraße 2<br />
+                                    54321 Beispielstadt
+                                </p>
+                            </div>
+
+                            <!-- Absender & Datum -->
+                            <div class="text-sm leading-relaxed text-right">
+                                <p>
+                                    Florian Mustermann<br />
+                                    Musterstraße 1<br />
+                                    12345 Musterstadt<br />
+                                    Telefon: +49 123 456789<br />
+                                    E-Mail: max@mustermann.de
+                                </p>
+                                <!-- Datum -->
+                                <p class="mt-4">Musterstadt, 15.03.2025</p>
+                            </div>
+                        </div>
+
+                        <!-- Betreff -->
+                        <div class="mt-8 mb-4">
+                            <p class="font-bold text-sm">
+                                Bewerbung als Projektleiter
+                            </p>
+                        </div>
+
+                        <!-- Anschreiben-Text -->
+                        <div class="text-sm leading-relaxed">
+                            <p class="mb-4">Sehr geehrtes Recruitingteam,</p>
+                            <p class="mb-4">
+                                Mit großem Interesse habe ich Ihre Ausschreibung
+                                für die Position als Projektleiter gelesen.
+                                Durch meinen Hintergrund sehe ich mich in der
+                                idealen Position.
+                            </p>
+                            <p class="mb-4">
+                                Lorem ipsum dolor sit amet consectetur,
+                                adipisicing elit. Labore, iusto aspernatur a
+                                corporis magnam sed fugit pariatur aliquid
+                                doloribus ipsum magni atque, earum ipsam saepe
+                                est sapiente doloremque dolorem maiores!
+                            </p>
+                            <p class="mb-4">
+                                Lorem ipsum dolor sit amet consectetur,
+                                adipisicing elit. Doloribus, dolorem nobis
+                                magnam soluta qui maiores veniam, consequatur
+                                quos saepe porro, iusto eius in voluptas dolor
+                                incidunt! Illo maiores consectetur vero!
+                            </p>
+                            <p class="mb-4">
+                                Ich freue mich darauf, in einem persönlichen
+                                Gespräch meine Motivation und meine Fähigkeiten
+                                detaillierter vorzustellen. Über eine Einladung
+                                zu einem Interview würde ich mich sehr freuen.
+                            </p>
+                        </div>
+
+                        <!-- Schlussformel + Unterschrift -->
+                        <div class="text-sm mt-8">
+                            <p class="mb-4">Mit freundlichen Grüßen,</p>
+                            <!-- Unterschrift (SVG) -->
+                            <!-- <img
+                                src={signatureSvg.src}
+                                alt="Unterschrift"
+                                class="w-32 mb-2"
+                            /> -->
+                            <p>Max Mustermann</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

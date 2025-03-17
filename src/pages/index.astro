@@ -1,0 +1,280 @@
+---
+import "../styles/tailwind.css";
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import hello from "../assets/img/application-picture.png";
+import { Tooltips } from "astro-tooltips";
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>My Resume</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <Tooltips interactive={false} data-tooltip-placement="left" />
+    </head>
+    <body
+        class="grid min-h-screen place-items-center bg-gray-400 print:min-h-0"
+    >
+        <main
+            class="m-4 h-[297mm] w-[210mm] overflow-hidden rounded-md bg-white shadow-lg print:m-0 print:h-screen print:w-screen print:rounded-none print:shadow-none"
+        >
+            <header
+                class="flex items-center justify-center h-[25mm] w-[210mm] bg-primary"
+            >
+                <div class="flex items-center w-[80mm] justify-center">
+                    <!-- To center the heading-text div -->
+                    <div class="flex flex-col items-center w-[50mm]">
+                        <!-- To have the text left aligned -->
+                        <h1 class="text-secondary font-bold text-xl">
+                            Max Mustermann
+                        </h1>
+                        <h2 class="text-secondary font-medium">Lebenslauf</h2>
+                    </div>
+                </div>
+            </header>
+            <div class="grid grid-cols-25/75 h-[272mm]">
+                <!-- First Column (25% width) - Left panel -->
+                <div class="flex flex-col items-center bg-secondary">
+                    <a
+                        href="https://github.com/Florian-Cywinski"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <Image
+                            src={hello}
+                            alt="Application picture"
+                            class="application-picture"
+                        /></a
+                    >
+                    <div
+                        class="flex flex-col items-center h-[140mm] left-panel-text-container"
+                    >
+                        <!-- Text container -->
+
+                        <p class="text-xs mt-6">Geburtstag</p>
+                        <p class="text-sm">12.02.1982 in Berlin</p>
+                        <hr
+                            class="w-40 h-1 mx-auto my-4 bg-primary border-0 rounded"
+                        />
+                        <p class="text-xs">Adresse</p>
+                        <p class="text-sm">Berliner Straße 1</p>
+                        <p class="text-sm">12345 Berlin</p>
+                        <hr
+                            class="w-40 h-1 mx-auto my-4 bg-primary border-0 rounded"
+                        />
+                        <p class="text-xs">Telefon</p>
+                        <p class="text-sm">+49 173 65 65 65 65</p>
+                        <hr
+                            class="w-40 h-1 mx-auto my-4 bg-primary border-0 rounded"
+                        />
+                        <p class="text-xs">E-Mail</p>
+                        <a class="text-sm" href="mailto:someone@example.com"
+                            >max-mustermann@mail.de</a
+                        >
+                    </div>
+                </div>
+
+                <!-- Second Column (75% width) -->
+                <div class="bg-white m-2">
+                    <!-- Berufserfahrung -->
+                    <div class="flex items-center">
+                        <Icon
+                            name="work-experience"
+                            size={15}
+                            class="text-white bg-primary mr-2"
+                        />
+                        <p class="text-primary text-base">Berufserfahrung</p>
+                    </div>
+                    <hr
+                        class="w-120 h-1 mx-auto my-1 bg-primary border-0 rounded"
+                    />
+                    <div class="flex items-start justify-start w-full">
+                        <p class="w-32 text-primary text-xs font-medium">
+                            Seit 11/2023
+                        </p>
+                        <div>
+                            <p class="text-primary text-sm font-semibold">
+                                Aktuelles Unternehmen GmbH
+                            </p>
+                            <p class="text-primary text-sm">Projektmanager</p>
+                            <p class="text-primary text-xs">
+                                • Leitung von Projekten
+                            </p>
+                        </div>
+                    </div>
+                    <hr
+                        class="w-120 h-1 mx-auto my-1 bg-secondary border-0 rounded"
+                    />
+                    <div class="flex items-start">
+                        <p class="w-32 text-primary text-xs font-medium">
+                            05/2020 - 10/2023
+                        </p>
+                        <div>
+                            <p class="text-primary text-sm font-semibold">
+                                Vorletztes Unternehmen GmbH
+                            </p>
+                            <p class="text-primary text-sm">Sales Manager</p>
+                            <p class="text-primary text-xs">• Verkauf</p>
+                            <p class="text-primary text-xs">• Vertrieb</p>
+                        </div>
+                    </div>
+                    <hr
+                        class="w-120 h-1 mx-auto my-1 bg-secondary border-0 rounded"
+                    />
+                    <div class="flex items-start">
+                        <p class="w-32 text-primary text-xs font-medium">
+                            01/2020 - 04/2020
+                        </p>
+                        <div>
+                            <p class="text-primary text-sm font-semibold">
+                                Vorvorletztes Unternehmen GmbH
+                            </p>
+                            <p class="text-primary text-sm">
+                                Vertriebsassistenz
+                            </p>
+                            <p class="text-primary text-xs">
+                                • Planung, Überprüfung und Steuerung von
+                                Vertriebsaktivitäten
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Ausbildung -->
+                    <div class="flex items-center mt-8">
+                        <Icon
+                            name="school"
+                            size={15}
+                            class="text-white bg-primary mr-2"
+                        />
+                        <p class="text-primary text-base">Ausbildung</p>
+                    </div>
+                    <hr
+                        class="w-120 h-1 mx-auto my-1 bg-primary border-0 rounded"
+                    />
+                    <div class="flex items-start justify-start w-full">
+                        <p class="w-32 text-primary text-xs font-medium">
+                            10/2017 - 10/2019
+                        </p>
+                        <div>
+                            <p class="text-primary text-sm font-semibold">
+                                Fernhochschule XY
+                            </p>
+                            <p class="text-primary text-sm">
+                                Fernstudium Wirtschaft - Master
+                            </p>
+                            <p class="text-primary text-xs">
+                                • Schwerpunkte: Management
+                            </p>
+                            <p class="text-primary text-xs">
+                                • Hilfswissenschaftler
+                            </p>
+                        </div>
+                    </div>
+                    <hr
+                        class="w-120 h-1 mx-auto my-1 bg-secondary border-0 rounded"
+                    />
+                    <div class="flex items-start">
+                        <p class="w-32 text-primary text-xs font-medium">
+                            10/2014 - 09/2017
+                        </p>
+                        <div>
+                            <p class="text-primary text-sm font-semibold">
+                                Fernhochschule XY
+                            </p>
+                            <p class="text-primary text-sm">
+                                Fernstudium Wirtschaft - Bachelor
+                            </p>
+                            <p class="text-primary text-xs">
+                                • Schwerpunkte: Marketing
+                            </p>
+                            <p class="text-primary text-xs">
+                                • Studentenjob: Kassenkraft
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kenntnisse und Interessen -->
+                    <div class="flex items-center mt-8">
+                        <Icon
+                            name="cognition"
+                            size={15}
+                            class="text-white bg-primary mr-2"
+                        />
+                        <p class="text-primary text-base">
+                            Kenntnisse und Interessen
+                        </p>
+                    </div>
+                    <hr
+                        class="w-120 h-1 mx-auto my-1 bg-primary border-0 rounded"
+                    />
+                    <div class="flex items-start justify-start w-full">
+                        <p class="w-32 text-primary text-xs font-medium">
+                            Fremdsprachen
+                        </p>
+                        <div>
+                            <p class="text-primary text-sm">
+                                Deutsch (Muttersprache)
+                            </p>
+                            <p class="text-primary text-sm">Englisch (B1)</p>
+                        </div>
+                    </div>
+                    <hr
+                        class="w-120 h-1 mx-auto my-1 bg-secondary border-0 rounded"
+                    />
+                    <div class="flex items-start">
+                        <p class="w-32 text-primary text-xs font-medium">
+                            IT-Kenntnisse
+                        </p>
+                        <a
+                            class="mr-2"
+                            href="https://www.javascript.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <Icon
+                                title="JavaScript"
+                                name="javascript"
+                                size={15}
+                            />
+                        </a>
+                        <a
+                            class="mr-2"
+                            href="https://react.dev/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <Icon title="React" name="react" size={15} />
+                        </a>
+                        <a
+                            class="mr-2"
+                            href="https://de.wikipedia.org/wiki/Hypertext_Markup_Language"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <Icon title="HTML5" name="html" size={15} />
+                        </a>
+                    </div>
+                    <hr
+                        class="w-120 h-1 mx-auto my-1 bg-secondary border-0 rounded"
+                    />
+                    <div class="flex items-start">
+                        <p class="w-32 text-primary text-xs font-medium">
+                            Hobbys
+                        </p>
+                        <p class="text-primary text-sm">Sport und Wandern</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
